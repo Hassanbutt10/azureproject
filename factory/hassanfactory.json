@@ -1,0 +1,9 @@
+{
+	"name": "hassanfactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cd003d10-d010-4873-b9ed-bfd6896db2c1",
+		"tenantId": "fd3d3d7b-6b20-4452-8564-97df3e6dfbea"
+	}
+}
