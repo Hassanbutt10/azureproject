@@ -318,6 +318,35 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Alearts",
+				"type": "WebHook",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Failed",
+							"Skipped",
+							"Succeeded",
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-20.northcentralus.logic.azure.com:443/workflows/a7f65ca815984b2da5bab53a92ee8f36/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=7FCkvtcVw1ShTIwnckpUI_0JnREjOddkSoj8jU2pds4",
+					"method": "POST",
+					"body": {
+						"value": "@json('{\"pipeline_name\": \"@{pipeline().Pipeline}\", \"pipeline_runId\": \"@{pipeline().RunId}\"}')\n",
+						"type": "Expression"
+					},
+					"timeout": "00:10:00"
+				}
 			}
 		],
 		"parameters": {
